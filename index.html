@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ProjectManager</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="app.css" />
+    <script src="dist/app.js" defer></script>
+  </head>
+  <body>
+    <template id="project-input">
+      <form>
+        <div class="">
+          <label class="form-label" for="title">Title</label>
+          <input class="form-control form-control-sm" type="text" id="title" />
+        </div>
+        <br />
+        <div class="">
+          <label class="form-label" for="description">Description</label>
+          <textarea
+            class="form-control form-control-sm"
+            id="description"
+            rows="3"
+          ></textarea>
+        </div>
+        <br />
+        <div class="">
+          <label class="form-label" for="people">People</label>
+          <input
+            class="form-control form-control-sm"
+            type="number"
+            id="people"
+            step="1"
+            min="0"
+            max="10"
+          />
+        </div>
+        <button class="btn btn-primary mt-3" type="submit">ADD PROJECT</button>
+        <hr />
+      </form>
+    </template>
+    <template id="single-project">
+      <li draggable="true">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex">
+              <h5 class="card-title"></h5>
+              <h6
+                class="card-subtitle mb-2 text-muted badge mx-2"
+              ></h6>
+            </div>
+            <p class="card-text"></p>
+            <a href="#" class="card-link">link</a>
+          </div>
+        </div>
+      </li>
+    </template>
+    <template id="project-list">
+      <section class="projects mt-4">
+        <header class="w-100 d-flex justify-content-center py-2">
+          <h2></h2>
+        </header>
+        <ul></ul>
+      </section>
+    </template>
+    <div id="app"></div>
+  </body>
+</html>
