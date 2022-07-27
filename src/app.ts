@@ -96,7 +96,7 @@ class ProjectsState {
 
   moveProject(id: string, newStatus: ProjectStatus) {
     const prj = this._projects.find((p) => p.id === id);
-    if (!(prj && (prj.status !== newStatus))) return;
+    if (!(prj && prj.status !== newStatus)) return;
     prj.status = newStatus;
     this._updateListeners();
   }
@@ -302,7 +302,7 @@ class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
         maxLength: 320,
       }),
       validate({
-        value: +enteredPeople,
+        value: Number(enteredPeople),
         required: true,
         min: 1,
         max: 7,
@@ -315,7 +315,7 @@ class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
       isEnteredPeopleValid,
     ].some((el) => el === false)
       ? [isEnteredTitleValid, isEnteredDescriptionValid, isEnteredPeopleValid]
-      : [enteredTitle, enteredDescription, +enteredPeople];
+      : [enteredTitle, enteredDescription, Number(enteredPeople)];
   }
 
   private _clearInputs() {
@@ -327,7 +327,7 @@ class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
     e.preventDefault();
     const values = this._getInputValues();
     if (values.some((el) => el === false))
-      return alert("Please select a value");
+      return alert("title: 4 - 12, \n description: 30 - 320, \n people: 1 - 7");
 
     state.setNewProject(...(values as [string, string, number]));
     this._clearInputs();
