@@ -11,7 +11,7 @@ https://marvelous-creponne-6cf4b0.netlify.app/
 - drag events
 
 
-## License
+## 
 
 Project by [Maximilian Schwarzmüller](https://twitter.com/maxedapps)
 
