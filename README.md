@@ -1,6 +1,6 @@
 
 # drag n drop
-todolist app to manage your simple projects
+Todolist app for simple project management
 ## Demo
 
 https://marvelous-creponne-6cf4b0.netlify.app/
